@@ -25,7 +25,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building Artifact'
-                bat 'npm run build'
+                bat 'npm run dev'
             }
         }
     }
