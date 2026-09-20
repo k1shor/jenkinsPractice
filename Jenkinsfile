@@ -3,9 +3,10 @@ pipeline{
 
     stages{
 
-        stage('Checkout'){
+        stage('Checking Environment'){
             steps{
-                echo 'Checking for files...'
+                bat 'node --version'
+                bat 'npm --version'
             }
         }
 
@@ -26,6 +27,12 @@ pipeline{
             steps{
                 echo 'Building Artifact'
                 bat 'npm run dev'
+            }
+        }
+
+        stage('Complete'){
+            steps{
+                bat 'echo Setup Complete'
             }
         }
     }
